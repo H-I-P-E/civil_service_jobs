@@ -4,15 +4,15 @@ library(dplyr)
 library(tidyr)
 
 emails_folder <- 'emails'
-jobs_xpath <- '//p | //h3 | //h2'
-column_names = c("job_title", "department", "location", "salary", "grade", "approach", "role_type","closing_date")
+jobs_xpath <- '//p | //h3 | //h2 | //h2//a'
+column_names = c("job_title", "link", "department", "location", "salary", "grade", "approach", "role_type","closing_date")
 raw_data_csv_name <- 'data\\raw_data.csv'
 
 data_frame(filename = dir(emails_folder, pattern = "*.html")) %>%
   mutate(date_downloaded = gsub(".html", "", filename),
          file_contents = map(filename, ~ read_html(paste(emails_folder,.,sep ='\\'))) %>% 
            map(~html_nodes(., xpath = jobs_xpath)) %>%
-           map(html_text) %>%
+           map(~ ifelse(is.na(html_attr(., 'href')),html_text(.),html_attr(., 'href'))) %>%
            map(~tail(., -2)) %>%
            map(~head(., -1)) %>%
            map(~data.frame('all_data' = ., 
