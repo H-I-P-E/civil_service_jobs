@@ -7,3 +7,6 @@ emails
 .~lock.raw_data.csv#
 raw_data.csv
 data
+client_id.json
+.httr-oauth
+basis vis.pbix
