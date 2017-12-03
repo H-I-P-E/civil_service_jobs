@@ -27,6 +27,7 @@ role_types <- all_advert_data %>%
   subset(select = c(job_id, role_type)) %>%
   mutate(role_type = strsplit(role_type, ",")) %>% 
   unnest(role_type) %>%
+  mutate(grade = trimws(role_type)) %>%
   write_csv(role_data_csv)
 
 grades <-  all_advert_data %>%
