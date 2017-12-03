@@ -38,7 +38,7 @@ grades <-  all_advert_data %>%
   unnest(grade) %>%
   mutate(grade = trimws(grade)) %>%
   write_csv(grade_data_csv)
-
+ 
 salaries <-  all_advert_data %>%
   subset(select = c(job_id, salary)) %>%
   mutate(salary = str_extract_all(salary, "[:digit:]{2,3}.?,?[:digit:]{3}")) %>% 
