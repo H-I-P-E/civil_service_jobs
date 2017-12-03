@@ -1,6 +1,8 @@
 library(readr)
 library(lubridate)
 library(stringr)
+library(dplyr)
+library(tidyr)
 
 raw_data_csv_name <- 'data\\raw_data.csv'
 cleaned_data_csv <- 'data\\cleaned_advert_data.csv'
@@ -27,6 +29,7 @@ role_types <- all_advert_data %>%
   subset(select = c(job_id, role_type)) %>%
   mutate(role_type = strsplit(role_type, ",")) %>% 
   unnest(role_type) %>%
+  mutate(role_type = trimws(role_type)) %>%
   write_csv(role_data_csv)
 
 grades <-  all_advert_data %>%
