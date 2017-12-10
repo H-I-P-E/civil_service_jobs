@@ -41,8 +41,9 @@ grades <-  all_advert_data %>%
  
 salaries <-  all_advert_data %>%
   subset(select = c(job_id, salary)) %>%
-  mutate(salary = str_extract_all(salary, "[:digit:]{2,3}.?,?[:digit:]{3}")) %>% 
+  mutate(salary = str_extract_all(salary, "[:digit:]{2,3}.?,? ?[:digit:]{3}")) %>% 
   unnest(salary) %>%
-  mutate(salary = as.numeric(gsub('\\.|,', '', salary))) %>%
+  mutate(salary = as.numeric(gsub('\\.|,| ', '', salary))) %>%
+  na.omit %>%
   write_csv(salary_data_csv)
 
