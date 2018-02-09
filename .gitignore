@@ -10,3 +10,5 @@ data
 client_id.json
 .httr-oauth
 basis vis.pbix
+adverts
+user_name_and_password.R
