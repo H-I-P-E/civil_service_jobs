@@ -3,7 +3,6 @@ library(purrr)
 library(dplyr)
 library(tidyr)
 library(readr)
-
         
 get_data_from_html <- function(html_document){
   nodes <- html_nodes(html_document, css = basic_info_css)
