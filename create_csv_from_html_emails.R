@@ -2,6 +2,7 @@ library(rvest)
 library(purrr)
 library(dplyr)
 library(tidyr)
+library(readr)
 
 emails_folder <- 'emails'
 jobs_xpath <- '//p | //h3 | //h2 | //h2//a'
