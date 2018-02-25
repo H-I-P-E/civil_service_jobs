@@ -9,7 +9,7 @@ key_words_results_file <- 'data\\key_words_results.csv'
 
 all_advert_data <- full_advert_data_csv %>%
   read_csv %>%
-  select(`Job description`, `Contact point for applicants`, job_ref, filename) %>%
+  select(job_ref, `Job description`, `Contact point for applicants`, filename) %>%
   mutate(dummy = TRUE)
 
 key_words <- key_words_csv %>%
@@ -50,3 +50,28 @@ key_word_counts %>%
 key_word_counts %>%
   select(-`Job description`) %>%
   write_csv(key_words_results_file)
+
+####mining prep####
+
+policy_roles <- 'data//role_data.csv' %>%
+  read_csv %>%
+  filter(role_type == 'Policy') %>%
+  transmute(job_id = job_id,
+            is_policy = T)
+
+all_advert_data <- full_advert_data_csv %>%
+  read_csv %>%
+  select(job_ref,`Job description`) %>%
+  left_join(cleaned_advert_data_csv %>%
+              read_csv, by = c("job_ref" = "job_id"))
+
+ready_for_mining <- all_advert_data %>%
+  left_join(key_word_counts %>%
+              mutate(possibly_impactful = as.numeric(cause_area_sum >= 9)) %>%
+              select(job_ref, `Cause area`, possibly_impactful)) %>%
+  spread(`Cause area`, possibly_impactful, fill = 0) %>%
+  select(-`<NA>`) %>%
+  left_join(policy_roles, by = c("job_ref" = "job_id")) %>%
+  replace_na(replace = list('is_policy' = F))
+
+write_csv(ready_for_mining, 'data//job_description_with_cause_areas.csv')
