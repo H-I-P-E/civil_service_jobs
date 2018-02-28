@@ -28,12 +28,12 @@ pre_mining_data_csv <- file.path(data_folder, 'job_description_with_cause_areas.
 key_words_results_file <- file.path(data_folder, 'key_words_results.csv')
 #data
 
-source('create_csv_from_html_emails.R')
-source('clean_data.R')
-source('scrape_adverts.R')
-source('create_csv_from_html_adverts.R')
+source('R_data//create_csv_from_html_emails.R')
+source('R_data//clean_data.R')
+source('R_data//scrape_adverts.R')
+source('R_data//create_csv_from_html_adverts.R')
 
 #analysis
 
-source('find_adverts_from_key_words.R')
+source('classification_model//find_adverts_with_keys_words.R')
 
