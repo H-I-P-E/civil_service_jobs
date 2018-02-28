@@ -1,13 +1,4 @@
-library(tidyverse)
-library(stringr)
-
-key_words_csv <- 'lookups\\key_words.csv'
-adverts_folder <- 'adverts'
-cleaned_advert_data_csv <- 'data\\cleaned_advert_data.csv'
-full_advert_data_csv <- 'data\\all_full_advert_data.csv'
-key_words_results_file <- 'data\\key_words_results.csv'
-
-all_advert_data <- full_advert_data_csv %>%
+all_advert_data <- adverts_csv_name %>%
   read_csv %>%
   select(job_ref, `Job description`, `Contact point for applicants`, filename) %>%
   mutate(dummy = TRUE)
@@ -27,10 +18,8 @@ key_word_counts <- all_advert_data %>%
   select(job_ref,  `Cause area`, cause_area_sum, match_rating, `Search term`) %>%
   spread(key = `Search term`, value = match_rating, fill = 0) %>%
   left_join(all_advert_data) %>%
-  left_join(cleaned_advert_data_csv %>% read_csv,
+  left_join(cleaned_data_csv %>% read_csv,
             by = c('job_ref' = 'job_id'))
-
-impactful_folder <- 'impactful adverts'
 
 create_cause_area_folder <- function(table_of_adverts){
   cause_area <- table_of_adverts$`Cause area`[[1]]
@@ -53,16 +42,16 @@ key_word_counts %>%
 
 ####mining prep####
 
-policy_roles <- 'data//role_data.csv' %>%
+policy_roles <- role_data_csv %>%
   read_csv %>%
   filter(role_type == 'Policy') %>%
   transmute(job_id = job_id,
             is_policy = T)
 
-all_advert_data <- full_advert_data_csv %>%
+all_advert_data <- adverts_csv_name %>%
   read_csv %>%
   select(job_ref,`Job description`) %>%
-  left_join(cleaned_advert_data_csv %>%
+  left_join(cleaned_data_csv %>%
               read_csv, by = c("job_ref" = "job_id"))
 
 ready_for_mining <- all_advert_data %>%
@@ -74,4 +63,4 @@ ready_for_mining <- all_advert_data %>%
   left_join(policy_roles, by = c("job_ref" = "job_id")) %>%
   replace_na(replace = list('is_policy' = F))
 
-write_csv(ready_for_mining, 'data//job_description_with_cause_areas.csv')
+write_csv(ready_for_mining, pre_mining_data_csv)

@@ -1,14 +1,5 @@
-library(rvest)
-library(purrr)
-library(dplyr)
-library(tidyr)
-library(readr)
-
-emails_folder <- 'emails'
 jobs_xpath <- '//p | //h3 | //h2 | //h2//a'
 column_names = c("job_title", "link", "department", "location", "salary", "grade", "approach", "role_type","closing_date")
-raw_data_csv_name <- 'data\\raw_data.csv'
-department_lookup <- 'lookups\\department_remapping.csv'
 
 data_frame(filename = dir(emails_folder, pattern = "*.html")) %>%
   mutate(date_downloaded = gsub(".html", "", filename),

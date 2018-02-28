@@ -1,10 +1,5 @@
-library(rvest)
-library(purrr)
-library(dplyr)
-library(tidyr)
-library(readr)
-library(XML)
-        
+basic_info_css <- '.vac_display_field_value , h3'
+
 get_data_from_html <- function(html_document){
   nodes <- html_nodes(html_document, css = basic_info_css)
   return(nodes)
@@ -29,11 +24,6 @@ convert_nodes_to_data <- Vectorize(function(nodes){
      spread(variable, value)
   return(data_as_one_row)
 })
-
-adverts_folder = 'adverts'
-basic_info_css <- '.vac_display_field_value , h3'
-adverts_csv_name <- 'data\\all_full_advert_data.csv'
-missing_data_csv <- 'data\\missing_data.csv'
 
 references_to_exclude <- c()
 

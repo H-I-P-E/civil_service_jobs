@@ -1,10 +1,3 @@
-library(downloader)
-library(rvest)
-library(xml2)
-library(tidyverse)
-
-folder = 'adverts\\'
-
 source('user_name_and_password.R') #This file will need to contain your csj username and password for this script to run
 
 log_in_session <- function(my_username, my_password){
@@ -21,7 +14,7 @@ log_in_session <- function(my_username, my_password){
 my_session <- log_in_session(username, password)
 
 download_page_logged_in <- Vectorize(function(job_ref){
-  file_name <- paste(folder, job_ref, '.html', sep = '')
+  file_name <- paste(adverts_folder, '\\', job_ref, '.html', sep = '')
   print(file_name)
   if(!file.exists(file_name)){
   job_url <- paste("https://www.civilservicejobs.service.gov.uk/csr/jobs.cgi?jcode=",job_ref,"&csource=csalerts", sep = "")
@@ -32,7 +25,7 @@ download_page_logged_in <- Vectorize(function(job_ref){
   return(file_name)
 })
 
-all_adverts <- read_csv('data\\cleaned_advert_data.csv') %>%
+all_adverts <- read_csv(cleaned_data_csv) %>%
   filter(approach != 'Internal') %>%
   select(job_id,link) %>%
   mutate(full_advert_file = download_page_logged_in(job_id))
