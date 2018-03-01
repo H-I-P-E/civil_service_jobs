@@ -10,7 +10,7 @@ convert_nodes_to_data <- Vectorize(function(nodes){
     as_data <- data.frame(type = html_name(nodes), text = html_text(nodes)) %>%
       mutate(row = as.integer(row.names(.)),
             dummy = TRUE)
-    data_as_one_row <- left_join(as_data %>% filter(type != 'h3'),
+    data_as_one_row <- full_join(as_data %>% filter(type != 'h3'),
               as_data %>% filter(type == 'h3'),
                       by = c('dummy')) %>%
      filter(row.x > row.y) %>%
