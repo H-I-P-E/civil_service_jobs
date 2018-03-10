@@ -64,3 +64,10 @@ ready_for_mining <- all_advert_data %>%
   replace_na(replace = list('is_policy' = F))
 
 write_csv(ready_for_mining, pre_mining_data_csv)
+
+####Summaries key word adverts####
+key_words_summary  <- all_advert_data %>%
+  
+
+write_csv(key_words_summary, key_words_summary_file)
+

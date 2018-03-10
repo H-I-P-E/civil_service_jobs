@@ -25,9 +25,10 @@ adverts_csv_name <- file.path(data_folder, 'all_full_advert_data.csv')
 missing_data_csv <- file.path(data_folder, 'missing_data.csv')
 key_words_csv <- file.path(lookups_folder, 'key_words.csv')
 pre_mining_data_csv <- file.path(data_folder, 'job_description_with_cause_areas.csv')
-key_words_results_file <- file.path(data_folder, 'key_words_results.csv')
-#data
+key_words_results_file <- file.path(data_folder, 'key_words_results_full.csv')
+key_words_summary_file <- file.path(data_folder, 'key_words_summary.csv')
 
+#data
 source('R_data//create_csv_from_html_emails.R')
 source('R_data//clean_data.R')
 source('R_data//scrape_adverts.R')
