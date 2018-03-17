@@ -58,8 +58,12 @@ missing_data <- missing_data %>%
 
 if(nrow(missing_data) >0){
   if(file.exists(missing_data_csv)){
-    write_csv(missing_data, missing_data_csv, append = T)
-  } else(write_csv(missing_data, missing_data_csv))}
+    missing_data <- read_csv(missing_data_csv) %>%
+      mutate_all(as.character) %>%
+      bind_rows(missing_data)
+  }
+write_csv(missing_data, missing_data_csv)
+}
 
 if(nrow(all_files_extract) >0){
 all_files_extract_as_data <- all_files_extract %>%
@@ -70,5 +74,9 @@ all_files_extract_as_data <- all_files_extract %>%
   select(-data,-html_nodes)
 
 if(file.exists(adverts_csv_name)){
-  write_csv(all_files_extract_as_data, adverts_csv_name, append = T)
-} else(write_csv(all_files_extract_as_data, adverts_csv_name))}
+  all_files_extract_as_data <- read_csv(adverts_csv_name) %>%
+    mutate_all(as.character) %>%
+    bind_rows(all_files_extract_as_data)
+}
+write_csv(all_files_extract_as_data, adverts_csv_name)
+}
