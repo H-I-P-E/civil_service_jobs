@@ -50,7 +50,7 @@ policy_roles <- role_data_csv %>%
 
 all_advert_data <- adverts_csv_name %>%
   read_csv %>%
-  select(job_ref,`Job description`) %>%
+  select(job_ref,`Job description`, `Contact point for applicants`) %>%
   left_join(cleaned_data_csv %>%
               read_csv, by = c("job_ref" = "job_id"))
 
@@ -65,9 +65,17 @@ ready_for_mining <- all_advert_data %>%
 
 write_csv(ready_for_mining, pre_mining_data_csv)
 
-####Summaries key word adverts####
-key_words_summary  <- all_advert_data %>%
-  
+####Summaries key word adverts and contact parsing####
+
+email_regex <- "/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\\.[a-zA-Z0-9_-]+)/"
+email_and_names <- all_advert_data %>%
+  select(job_ref, `Contact point for applicants`) %>%
+  mutate(emails = map(`Contact point for applicants`, ~grep(email_regex,.x , value = T)))
+
+key_words_summary  <- ready_for_mining %>%
+  filter(job_ref %in% key_word_counts$job_ref) %>%
+  left_join(all_advert_data)
+
 
 write_csv(key_words_summary, key_words_summary_file)
 
