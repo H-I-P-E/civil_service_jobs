@@ -71,7 +71,8 @@ all_files_extract_as_data <- all_files_extract %>%
   mutate(row_of_data = map(html_nodes, convert_nodes_to_data)) %>%
   filter(map(row_of_data, length) > 0) %>%
   unnest(row_of_data) %>%
-  spread(variable, value)
+  spread(variable, value) %>%
+  mutate_all(funs(gsub("\t|;", "", .)))
 
 if(file.exists(adverts_csv_name)){
   all_files_extract_as_data <- read_csv(adverts_csv_name) %>%
