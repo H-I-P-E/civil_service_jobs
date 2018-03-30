@@ -1,21 +1,17 @@
-library(rvest)
-library(purrr)
-library(dplyr)
-library(tidyr)
-library(readr)
-library(XML)
-        
+basic_info_css <- '.vac_display_field_value , h3'
+
 get_data_from_html <- function(html_document){
   nodes <- html_nodes(html_document, css = basic_info_css)
   return(nodes)
   }
 
 #Takes a list of html nodes and returns a single row of data using the the h3s as column headings
-convert_nodes_to_data <- Vectorize(function(nodes){
+#Spread all the data not each row
+convert_nodes_to_data <- function(nodes){
     as_data <- data.frame(type = html_name(nodes), text = html_text(nodes)) %>%
       mutate(row = as.integer(row.names(.)),
             dummy = TRUE)
-    data_as_one_row <- left_join(as_data %>% filter(type != 'h3'),
+    data_as_one_row <- full_join(as_data %>% filter(type != 'h3'),
               as_data %>% filter(type == 'h3'),
                       by = c('dummy')) %>%
      filter(row.x > row.y) %>%
@@ -25,15 +21,9 @@ convert_nodes_to_data <- Vectorize(function(nodes){
      transmute(variable = as.character(text.y),
                value = as.character(text.x)) %>%
      group_by(variable) %>%
-     summarise(value = paste(value, collapse = "!!!")) %>%
-     spread(variable, value)
+     summarise(value = paste(value, collapse = "!!!")) 
   return(data_as_one_row)
-})
-
-adverts_folder = 'adverts'
-basic_info_css <- '.vac_display_field_value , h3'
-adverts_csv_name <- 'data\\all_full_advert_data.csv'
-missing_data_csv <- 'data\\missing_data.csv'
+}
 
 references_to_exclude <- c()
 
@@ -68,17 +58,26 @@ missing_data <- missing_data %>%
 
 if(nrow(missing_data) >0){
   if(file.exists(missing_data_csv)){
-    write_csv(missing_data, missing_data_csv, append = T)
-  } else(write_csv(missing_data, missing_data_csv))}
+    missing_data <- read_csv(missing_data_csv) %>%
+      mutate_all(as.character) %>%
+      bind_rows(missing_data)
+  }
+write_csv(missing_data, missing_data_csv)
+}
 
 if(nrow(all_files_extract) >0){
 all_files_extract_as_data <- all_files_extract %>%
   filter(unlist(map(html_nodes, xmlSize) > 0)) %>% #Filter out documents with no matching nodes
-  mutate(row_of_data = convert_nodes_to_data(html_nodes)) %>%
+  mutate(row_of_data = map(html_nodes, convert_nodes_to_data)) %>%
   filter(map(row_of_data, length) > 0) %>%
   unnest(row_of_data) %>%
-  select(-data,-html_nodes)
+  spread(variable, value) %>%
+  mutate_all(funs(gsub("\t|;", "", .)))
 
 if(file.exists(adverts_csv_name)){
-  write_csv(all_files_extract_as_data, adverts_csv_name, append = T)
-} else(write_csv(all_files_extract_as_data, adverts_csv_name))}
+  all_files_extract_as_data <- read_csv(adverts_csv_name) %>%
+    mutate_all(as.character) %>%
+    bind_rows(all_files_extract_as_data)
+}
+write_csv(all_files_extract_as_data, adverts_csv_name)
+}

@@ -1,16 +1,7 @@
-library(rvest)
-library(purrr)
-library(dplyr)
-library(tidyr)
-library(readr)
-
-emails_folder <- 'emails'
 jobs_xpath <- '//p | //h3 | //h2 | //h2//a'
 column_names = c("job_title", "link", "department", "location", "salary", "grade", "approach", "role_type","closing_date")
-raw_data_csv_name <- 'data\\raw_data.csv'
-department_lookup <- 'lookups\\department_remapping.csv'
 
-data_frame(filename = dir(emails_folder, pattern = "*.html")) %>%
+all_email_data <- data_frame(filename = dir(emails_folder, pattern = "*.html")) %>%
   mutate(date_downloaded = gsub(".html", "", filename),
          file_contents = map(filename, ~ read_html(paste(emails_folder,.,sep ='\\'))) %>% 
            map(~html_nodes(., xpath = jobs_xpath)) %>%
@@ -29,4 +20,6 @@ data_frame(filename = dir(emails_folder, pattern = "*.html")) %>%
             by = c('department'='unmapped_department')) %>%
   mutate(job_department = coalesce(job_department, department)) %>%
   select(-id, -department) %>%
-  write.csv(raw_data_csv_name, row.names = F)
+  mutate_all(funs(gsub("\t|;", "", .)))
+
+write.csv(all_email_data, raw_data_csv_name, row.names = F)

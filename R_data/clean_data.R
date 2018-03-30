@@ -1,19 +1,3 @@
-library(readr)
-library(lubridate)
-library(stringr)
-library(dplyr)
-library(tidyr)
-
-raw_data_csv_name <- 'data\\raw_data.csv'
-cleaned_data_csv <- 'data\\cleaned_advert_data.csv'
-role_data_csv <- 'data\\role_data.csv'
-grade_data_csv <- 'data\\grade_data.csv'
-salary_data_csv <- 'data\\salary_data.csv'
-
-if(!file.exists(raw_data_csv_name)){
-  source('create_csv_from_html_emails.R')
-}
-
 all_advert_data <- read_csv(raw_data_csv_name) %>%
   mutate(closing_date = dmy(gsub("Closing Date: ", "", closing_date)),
          date_downloaded = ymd(date_downloaded),
