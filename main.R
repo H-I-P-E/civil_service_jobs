@@ -14,6 +14,7 @@ emails_folder <- 'emails'
 adverts_folder <- 'adverts'
 lookups_folder <- 'lookups'
 data_folder <- 'data'
+email_tables <- 'ea emails'
 
 raw_data_csv_name <- file.path(data_folder, 'raw_data.csv')
 department_lookup <- file.path(lookups_folder, 'department_remapping.csv')
@@ -37,6 +38,5 @@ source('R_data//scrape_adverts.R')
 source('R_data//create_csv_from_html_adverts.R')
 
 #analysis
-
-source('classification_model//find_adverts_with_keys_words.R')
-
+source('R_analysis//find_adverts_with_keys_words.R')
+source('R_analysis//ea_community_emails.R')
