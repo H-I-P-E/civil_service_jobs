@@ -26,6 +26,8 @@ download_page_logged_in <- Vectorize(function(job_ref){
 })
 
 all_adverts <- read_csv(cleaned_data_csv) %>%
-  filter(approach != 'Internal') %>%
   select(job_id,link) %>%
   mutate(full_advert_file = download_page_logged_in(job_id))
+
+
+

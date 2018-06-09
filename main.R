@@ -27,6 +27,8 @@ key_words_csv <- file.path(lookups_folder, 'key_words.csv')
 pre_mining_data_csv <- file.path(data_folder, 'job_description_with_cause_areas.csv')
 key_words_results_file <- file.path(data_folder, 'key_words_results_full.csv')
 key_words_summary_file <- file.path(data_folder, 'key_words_summary.csv')
+competencies_file <- file.path(lookups_folder, 'competencies.csv')
+competency_data_file <- file.path(data_folder, 'competency_data.csv')
 
 #data
 source('R_data//create_csv_from_html_emails.R')

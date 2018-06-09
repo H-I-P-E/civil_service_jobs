@@ -6,9 +6,9 @@ all_email_data <- data_frame(filename = dir(emails_folder, pattern = "*.html")) 
          file_contents = map(filename, ~ read_html(paste(emails_folder,.,sep ='\\'))) %>% 
            map(~html_nodes(., xpath = jobs_xpath)) %>%
            map(~ ifelse(is.na(html_attr(., 'href')),html_text(.),html_attr(., 'href'))) %>%
-           map(~tail(., -2)) %>%
            map(~head(., -1)) %>%
-           map(~data.frame('all_data' = ., 
+           map(~tail(., -2)) %>%
+           map(~data.frame('all_data' = .[1:length(.)-length(.)%% length(column_names)],
                            'id' = rep(1:(length(.)%/% length(column_names)), each = length(column_names)),
                            stringsAsFactors = F))) %>%
   unnest %>%
