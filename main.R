@@ -32,6 +32,7 @@ competencies_file <- file.path(lookups_folder, 'competencies.csv')
 competency_data_file <- file.path(data_folder, 'competency_data.csv')
 
 #data
+#source('database_details.R')
 source('R_data//create_csv_from_html_emails.R')
 source('R_data//clean_data.R')
 source('R_data//scrape_adverts.R')
