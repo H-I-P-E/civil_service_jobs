@@ -21,7 +21,7 @@ download_page_logged_in <- Vectorize(function(job_ref){
   job_url_session <- jump_to(my_session, job_url)
   job_html <- read_html(job_url_session)
   write_xml(job_html, file_name)
-  Sys.sleep(2)}
+  Sys.sleep(1)}
   return(file_name)
 })
 
