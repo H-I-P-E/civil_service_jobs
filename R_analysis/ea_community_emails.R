@@ -12,6 +12,8 @@ all_advert_data <-adverts_csv_name %>%
 needed_advert_info <- all_advert_data %>%
   select(job_ref, `Number of posts`) 
 
+basic_advert_info <- cleaned_data_csv %>%
+  read_csv
 
 previously_identified_adverts <- email_tables %>%
   list.files() %>%
@@ -22,6 +24,7 @@ previously_identified_adverts <- email_tables %>%
 emailable_key_words_results <- key_words_results_file %>%
   read_csv %>%
   left_join(needed_advert_info) %>%
+  left_join(basic_advert_info, by = c('job_ref' = 'job_id')) %>%
   mutate(`To share with EAs? Y/N/?` = '',
          Notes = '') %>%
   filter(cause_area_sum >= min_cause_area_sum,
