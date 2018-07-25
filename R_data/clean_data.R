@@ -1,3 +1,10 @@
+existing_job_refs <- c()
+if(file.exists(cleaned_data_csv)){
+  existing_job_refs <- cleaned_data_csv %>%
+    read_csv %>%
+    pull(job_id)
+}
+
 all_advert_data <- read_csv(raw_data_csv_name) %>%
   mutate(closing_date = dmy(gsub("Closing Date: ", "", closing_date)),
          date_downloaded = ymd(date_downloaded),
@@ -40,8 +47,9 @@ locations_lookup <- post_code_locations_file %>%
   select(postcode_regex,region_regex, Postcode, Region) %>%
   mutate(dummy = TRUE)
 
-locations <-  all_advert_data %>%
+new_locations <-  all_advert_data %>%
   subset(select = c(job_id, location)) %>%
+  filter(!(job_id %in% existing_job_refs)) %>%
   mutate(dummy = TRUE,
          location = tolower(gsub("[[:punct:]]", " ", location))) %>%
   full_join(locations_lookup) %>%
@@ -51,6 +59,12 @@ locations <-  all_advert_data %>%
   filter(post_code_matches | region_matches)%>%
   distinct(job_id, Region) %>%
   select(job_id, Region)
+
+if(file.exists(location_data_csv)){
+  locations <- read_csv(location_data_csv) %>%
+    mutate_all(as.character) %>%
+    bind_rows(new_locations)
+}
 
 write_csv(locations, location_data_csv)
 

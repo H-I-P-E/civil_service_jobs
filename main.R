@@ -8,6 +8,7 @@ library(stringr)
 library(dplyr)
 library(downloader)
 library(xml2)
+library(DBI)
 
 impactful_folder <- 'impactful adverts'
 emails_folder <- 'emails'
@@ -32,6 +33,7 @@ key_words_summary_file <- file.path(data_folder, 'key_words_summary.csv')
 competencies_file <- file.path(lookups_folder, 'competencies.csv')
 post_code_locations_file <- file.path(lookups_folder, 'Postcode districts.csv')
 competency_data_file <- file.path(data_folder, 'competency_data.csv')
+#jobsdb <- dbConnect(RSQLite::SQLite(), file.path(data_folder, "jobs_db.sqlite"))
 
 #data
 source('R_data//create_csv_from_html_emails.R')

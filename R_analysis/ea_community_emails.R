@@ -36,7 +36,8 @@ emailable_key_words_results <- key_words_results_file %>%
          link,
          job_department,
          `To share with EAs? Y/N/?`,
-         Notes)
+         Notes) %>%
+  unique()
 
 #check if there are any new ones?
 my_file_name <- file.path(email_tables, paste(today(),'.csv', sep = ''))
