@@ -31,13 +31,18 @@ pre_mining_data_csv <- file.path(data_folder, 'job_description_with_cause_areas.
 key_words_results_file <- file.path(data_folder, 'key_words_results_full.csv')
 key_words_summary_file <- file.path(data_folder, 'key_words_summary.csv')
 competencies_file <- file.path(lookups_folder, 'competencies.csv')
-post_code_locations_file <- file.path(lookups_folder, 'Postcode districts.csv')
+manual_locations_file <- file.path(lookups_folder, 'manually_matched_locations.csv')
+specific_locations_file <- file.path(lookups_folder, 'specific_location_searches.csv')
+post_code_locations_file <- file.path(lookups_folder, 'postcode_locations.csv')
+region_lookup_file <- file.path(lookups_folder, 'region_lookup.csv')
+
 competency_data_file <- file.path(data_folder, 'competency_data.csv')
 #jobsdb <- dbConnect(RSQLite::SQLite(), file.path(data_folder, "jobs_db.sqlite"))
 
 #data
 source('R_data//create_csv_from_html_emails.R')
 source('R_data//clean_data.R')
+source('R_data//parse_locations.R')
 source('R_data//scrape_adverts.R')
 source('R_data//create_csv_from_html_adverts.R')
 

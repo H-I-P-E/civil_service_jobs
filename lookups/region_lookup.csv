@@ -1,0 +1,424 @@
+lat,long,region
+49.1995,-2.08378,jersey
+49.4249,-2.60752,guernsey
+49.8936,-6.34198,isles of scilly
+50.0443,-5.1846,cornwall
+50.2403,-3.77217,south hams
+50.3555,-4.09005,plymouth
+50.3922,-3.52242,torbay
+50.4806,-3.78041,teignbridge
+50.5038,-4.10047,west devon
+50.5492,-2.44274,weymouth and portland
+50.5859,-3.47102,exeter
+50.6035,-1.23835,isle of wight
+50.6114,-1.96995,purbeck
+50.7104,-1.91837,poole
+50.7124,-2.44375,west dorset
+50.7217,-1.90049,bournemouth
+50.7253,-1.86313,bournemouth 
+50.7454,-1.75853,christchurch
+50.7523,-1.65864,new forest
+50.7549,-3.4375,east devon
+50.7722,0.274528,eastbourne
+50.776,0.107314,wealden
+50.7848,-0.693696,sussex
+50.7897,-1.0866,hampshire
+50.7953,0.0266798,lewes
+50.8048,-0.0586691,brighton and hove
+50.8062,-1.8891,east dorset
+50.8103,-3.70189,mid devon
+50.8137,-0.375472,worthing
+50.8151,-0.537084,arun
+50.8355,-0.26804,adur
+50.8408,-1.49221,southampton
+50.8439,0.480361,rother
+50.8614,-2.17997,north dorset
+50.863,0.579927,hastings
+50.8699,-1.29435,eastleigh
+50.8732,-2.96157,somerset
+50.8884,-0.183354,mid sussex
+50.8927,-0.318608,horsham
+50.939,-2.64274,south somerset
+50.9775,-1.4364,test valley
+50.9834,0.949666,shepway
+50.9843,-0.746626,chichester
+50.9977,-0.908092,east hampshire
+51.0159,-4.24292,torridge
+51.0243,-1.77343,wiltshire
+51.0454,0.524406,tunbridge wells
+51.0641,0.695235,ashford
+51.0658,-1.332,winchester
+51.0731,1.07803,kent
+51.0797,1.16535,folkestone
+51.0836,-0.722168,waverley
+51.1125,-0.204825,crawley
+51.1245,0.250242,sevenoaks
+51.1259,-3.00099,sedgemoor
+51.1265,-2.7431,mendip
+51.1731,0.436186,maidstone
+51.1744,-0.0180952,tandridge
+51.1913,0.27788,tonbridge and malling
+51.196,-0.342349,mole valley
+51.2065,-0.521835,guildford
+51.2366,-0.203271,reigate and banstead
+51.2495,-0.762309,rushmoor
+51.2661,-0.838158,hart
+51.2857,-2.44915,bath and north east somerset
+51.2921,1.08151,canterbury
+51.295,0.163089,bromley
+51.2979,-0.0969178,croydon
+51.3049,0.894428,swale
+51.3133,-0.553134,woking
+51.3138,-0.731427,surrey heath
+51.319,-0.263677,epsom and ewell
+51.3282,-0.404654,elmbridge
+51.3291,-1.78252,kennet
+51.3311,-2.92464,north somerset
+51.3431,1.37084,ramsgate
+51.3439,-2.95702,bristol
+51.3476,-0.792961,bracknell forest
+51.3521,0.531575,medway
+51.3532,-0.197811,sutton
+51.3576,-1.34484,berkshire
+51.3629,1.42912,broadstairs
+51.3647,-0.303134,kingston upon thames
+51.3649,-0.494673,runnymede
+51.3859,0.306422,dartford
+51.3861,0.354282,gravesham
+51.393,-0.200199,merton
+51.3976,-0.44795,spelthorne
+51.3986,-0.839517,wokingham
+51.4029,-1.33491,west berkshire
+51.4043,-3.30872,vale of glamorgan
+51.4049,-0.662169,windsor and maidenhead
+51.4174,-3.26763,cardiff
+51.4211,-0.369496,richmond upon thames
+51.4235,-0.129544,lambeth
+51.4259,0.110468,bexley
+51.4302,-0.165128,wandsworth
+51.4386,-0.0175192,lewisham
+51.4392,-0.403438,hounslow
+51.4461,0.0545643,greenwich
+51.4464,-2.47553,south gloucestershire
+51.4546,-0.0725614,southwark
+51.4676,0.370313,thurrock
+51.4685,-0.450991,hillingdon
+51.4774,-0.200552,hammersmith and fulham
+51.4782,-0.081697,london
+51.4838,-0.183034,kensington and chelsea
+51.484,-3.69977,bridgend
+51.4889,-0.133956,westminster
+51.4991,-0.538793,slough
+51.5005,-0.38088,ealing
+51.5052,-1.10672,south oxfordshire
+51.5076,-0.0210456,tower hamlets
+51.5112,-0.0846961,city of london
+51.5117,0.0204731,newham
+51.515,-0.120919,camden
+51.516,-0.614412,south buckinghamshire
+51.5186,-0.71479,maidenhead
+51.5214,-0.103592,islington
+51.5222,0.589635,castle point
+51.5231,-0.088055,hackney
+51.5237,0.192148,havering
+51.5298,-3.39976,rhondda cynon taf
+51.5318,-1.84455,swindon
+51.535,0.09177,barking and dagenham
+51.5392,-0.248818,brent
+51.5393,0.724814,southend-on-sea
+51.5421,0.789573,rochford
+51.5501,-0.304744,harrow
+51.5592,0.0727802,redbridge
+51.5593,-0.218501,barnet
+51.5611,-2.29359,gloucester
+51.5632,0.451941,basildon
+51.5674,0.0116878,waltham forest
+51.5703,0.170637,romford
+51.5712,-0.10354,haringey
+51.5801,-3.04295,newport
+51.5816,-4.04281,swansea
+51.5855,-3.22046,caerphilly
+51.5905,-2.77622,monmouthshire
+51.5949,-1.42569,vale of white horse
+51.6044,-3.73687,neath port talbot
+51.6104,-0.64195,chiltern
+51.6108,-0.710238,wycombe
+51.6137,0.087032,epping forest
+51.6137,-0.0648214,enfield
+51.6155,0.334442,brentwood
+51.6283,-2.38468,stroud
+51.6327,-0.393793,watford
+51.6414,-2.16949,cotswold
+51.6435,-0.483078,three rivers
+51.6453,-0.366816,hertsmere
+51.6513,-3.02768,torfaen
+51.6602,0.83288,maldon
+51.6639,-3.30146,merthyr tydfil
+51.6695,-4.9333,pembrokeshire
+51.689,-4.25426,carmarthenshire
+51.7069,-0.454099,dacorum
+51.7082,-0.064473,broxbourne
+51.7154,0.586714,chelmsford
+51.7214,-3.23858,blaenau gwent
+51.7226,-0.330721,st albans
+51.7288,-1.21426,oxford
+51.7469,-0.201662,welwyn hatfield
+51.7506,-0.849708,aylesbury vale
+51.7567,0.104683,harlow
+51.7623,-1.5928,west oxfordshire
+51.7898,-0.072089,east hertfordshire
+51.7966,1.15517,tendring
+51.8048,0.638828,braintree
+51.8058,-0.0907279,hertfordshire
+51.8138,0.822108,colchester
+51.8577,-3.14116,powys
+51.8609,-1.29354,cherwell
+51.8614,-0.182459,north hertfordshire
+51.8763,-0.42458,luton
+51.8784,0.372575,uttlesford
+51.8808,-0.532802,central bedfordshire
+51.882,-2.06897,tewkesbury
+51.8965,-0.169493,stevenage
+51.9085,-2.58174,hereford
+51.9137,-0.66278,leighton buzzard
+51.9582,-3.37426,llandrindod wells
+51.9669,1.33387,suffolk coastal
+51.9919,-0.725587,milton keynes
+51.9929,1.14787,babergh
+52.0293,-0.472641,bedford
+52.0323,-1.14756,south northamptonshire
+52.0421,1.18483,ipswich
+52.0469,-1.88037,wychavon
+52.0715,-1.62985,stratford-on-avon
+52.083,0.439987,st edmundsbury
+52.0835,-4.36964,ceredigion
+52.0906,-2.20163,worcester
+52.0947,-2.34189,malvern hills
+52.1281,1.11242,mid suffolk
+52.1304,0.279368,cambridge
+52.2146,-0.920994,daventry
+52.2213,-0.897628,northampton
+52.233,0.420701,newmarket
+52.2334,-1.59616,warwick
+52.2367,-0.263593,huntingdonshire
+52.2549,-1.95942,redditch
+52.2929,-0.599077,east northamptonshire
+52.2975,-0.692825,wellingborough
+52.3253,-2.05246,bromsgrove
+52.3272,0.538939,forest heath
+52.3305,1.66875,waveney
+52.3372,-2.28086,wyre forest
+52.3497,-1.3051,rugby
+52.353,-1.79129,solihull
+52.3569,-1.95163,bromsgrove worcestershire
+52.3654,-2.69691,shropshire
+52.3706,0.31153,ely
+52.378,1.07176,south norfolk
+52.381,-0.117076,peterborough
+52.384,-0.706421,kettering
+52.3886,-2.00866,birmingham
+52.394,-1.48319,coventry
+52.4062,-2.21961,wolverhampton
+52.4189,0.755754,breckland
+52.4376,-2.1242,dudley
+52.4395,1.58259,suffolk
+52.4548,0.0494066,fenland
+52.4647,-2.21796,south staffordshire
+52.4675,-1.18199,leicester
+52.4725,-2.069,sandwell
+52.477,-1.47376,nuneaton & bedworth
+52.4785,1.05571,norfolk
+52.4792,-0.710786,corby
+52.4795,-1.90764,birmingham 
+52.4851,-0.898602,harborough
+52.5072,-1.69769,north warwickshire
+52.5474,-4.04068,gwynedd
+52.5683,-1.96148,walsall
+52.5916,0.376054,west norfolk
+52.6064,-1.67486,tamworth
+52.6081,-1.41789,hinckley and bosworth
+52.6266,1.30916,norwich
+52.6303,-2.47862,telford and wrekin
+52.6538,-0.478547,south kesteven
+52.6593,-0.706271,rutland
+52.6696,-1.81344,lichfield
+52.6889,-2.01658,cannock chase
+52.7129,-2.74956,shrewsbury
+52.7172,-2.14527,staffordshire
+52.7276,-1.55429,south derbyshire
+52.7681,-1.19176,charnwood
+52.7834,-0.895226,melton
+52.7859,0.0186903,south holland
+52.7996,-1.61028,east staffordshire
+52.8485,-1.34108,north west leicestershire
+52.8493,-1.43853,derby
+52.8942,-1.36696,erewash
+52.9,-1.17429,nottingham
+52.9107,-1.05875,rushcliffe
+52.9262,-1.23333,broxtowe
+52.9328,-0.10192,boston
+52.9609,-3.16215,denbighshire
+52.9627,-1.66665,derbyshire dales
+52.9678,-1.13026,gedling
+52.9876,-0.39534,north kesteven
+52.9888,-3.40841,conwy
+52.9924,-3.05256,wrexham
+53.0037,-2.41033,cheshire east
+53.012,-1.3532,amber valley
+53.016,-2.25002,newcastle-under-lyme
+53.028,-2.76275,cheshire west and chester
+53.0454,-1.2027,ashfield
+53.071,-0.802014,newark and sherwood
+53.1409,-1.18601,mansfield
+53.1522,0.334642,east lindsey
+53.1577,-0.216068,lincoln
+53.1674,-1.42162,north east derbyshire
+53.1695,-3.13423,flintshire
+53.1779,-2.89582,chester
+53.1967,-4.25972,anglesey
+53.2019,-1.42353,chesterfield
+53.2083,-1.18498,bolsover
+53.2553,-0.583193,west lindsey
+53.2763,-2.93585,liverpool
+53.295,-1.14642,bassetlaw
+53.3226,-1.52611,sheffield
+53.3269,-3.09639,wirral
+53.3281,-1.94613,high peak
+53.3302,-2.70357,halton
+53.3426,-1.28395,rotherham
+53.3639,-2.27545,manchester
+53.3696,-2.1441,stockport
+53.37,-2.58104,warrington
+53.3844,-2.32858,trafford
+53.4143,-2.84142,knowsley
+53.4265,-0.941307,doncaster
+53.4371,-2.71997,st. helens
+53.4407,-2.42711,salford
+53.4519,-2.54816,wigan
+53.453,-2.04654,tameside
+53.4767,-3.02749,sefton
+53.4976,-2.15244,oldham
+53.5018,-1.44051,barnsley
+53.5133,-0.0395322,north east lincolnshire
+53.5333,-2.27994,bury
+53.5473,-2.4031,bolton
+53.552,-2.19878,rochdale
+53.5522,-2.7716,west lancashire
+53.558,-0.503534,north lincolnshire
+53.5792,-1.79568,kirklees
+53.6062,-1.32068,wakefield
+53.6485,-2.65258,chorley
+53.6807,-1.88,calderdale
+53.6887,-2.73805,south ribble
+53.6979,-2.4664,blackburn with darwen
+53.7008,-2.20427,rossendale
+53.7077,-0.934195,east riding of yorkshire
+53.7215,-1.52386,leeds
+53.7366,-0.39907,kingston upon hull
+53.7479,-1.76243,bradford
+53.7503,-3.00624,fylde
+53.7534,-2.46423,blackburn
+53.7546,-2.37222,hyndburn
+53.7546,-3.00814,blackpool
+53.7579,-2.70188,preston
+53.7847,-2.25085,burnley
+53.7855,-1.05666,york
+53.7973,-1.75431,bradford 
+53.837,-2.21577,pendle
+53.8477,-1.83223,bingley
+53.8653,-2.98077,wyre
+53.8716,-1.25529,selby
+53.8723,-2.38894,ribble valley
+53.9877,-1.528,harrogate
+53.9891,-2.0525,craven
+54.0469,-2.80022,lancaster
+54.0876,-1.38815,north yorkshire
+54.1133,-4.69514,isle of man
+54.1178,-3.23063,barrow-in-furness
+54.1532,-6.18156,newry and mourne
+54.1539,-1.55974,ripon
+54.1997,-2.92416,south lakeland
+54.2152,-3.27548,copeland
+54.2231,-5.89092,down
+54.2237,-7.46401,fermanagh
+54.2926,-6.64766,armagh
+54.3362,-6.24731,banbridge
+54.3644,-6.84812,dungannon and south tyrone
+54.4081,-6.39271,craigavon
+54.4538,-6.06334,lisburn
+54.4691,-1.16828,hambleton
+54.4799,-2.35041,eden
+54.494,-1.33316,stockton-on-tees
+54.5034,-5.51481,north down
+54.5217,-1.23126,middlesbrough
+54.5219,-6.08511,county antrim
+54.5275,-1.5597,county durham
+54.5277,-1.59307,darlington
+54.5322,-1.06177,redcar & cleveland
+54.5453,-5.90824,belfast
+54.5717,-5.70741,ards
+54.5726,-7.37203,omagh
+54.5759,-1.24494,middlesborough
+54.6022,-3.13461,allerdale
+54.6459,-6.74451,cookstown
+54.6634,-1.22408,hartlepool
+54.6765,-5.90829,newtownabbey
+54.696,-7.61215,strabane
+54.7287,-5.80102,carrickfergus
+54.7316,-6.25373,antrim
+54.7597,-6.63941,magherafelt
+54.8205,-3.21187,carlisle
+54.8245,-1.4558,sunderland
+54.8372,-4.05556,kirkcudbrightshire
+54.8467,-5.82269,larne
+54.8545,-6.27653,ballymena
+54.8742,-4.51424,wigtownshire
+54.9007,-1.53613,newcastle upon tyne
+54.9156,-1.81873,gateshead
+54.9287,-1.59962,newcastle
+54.9301,-2.24747,northumberland
+54.9471,-1.443,south tyneside
+54.9805,-7.23159,derry
+54.9898,-3.25144,dumfriesshire
+55.0005,-1.5189,north tyneside
+55.0477,-6.952,limavady
+55.0609,-6.68305,coleraine
+55.0852,-6.47696,ballymoney
+55.2027,-6.25747,moyle
+55.22,-4.83589,south ayrshire
+55.3996,-2.7775,scottish borders
+55.4177,-4.50887,east ayrshire
+55.4339,-5.60567,argyllshire
+55.5407,-5.16955,north ayrshire
+55.5717,-3.5899,south lanarkshire
+55.7741,-4.33109,east renfrewshire
+55.7767,-3.91511,north lanarkshire
+55.7851,-2.9619,midlothian
+55.7972,-4.61908,renfrewshire
+55.8044,-4.30699,glasgow
+55.8216,-4.07539,lanarkshire
+55.8343,-5.057,buteshire
+55.8483,-3.57418,west lothian
+55.8556,-2.85332,east lothian
+55.869,-4.87462,ayrshire
+55.9076,-3.14389,edinburgh
+55.9109,-4.21793,east dunbartonshire
+55.912,-4.40717,west dunbartonshire
+55.9886,-3.79311,falkirk
+56.014,-4.75471,argyll and bute
+56.0425,-4.36883,stirling
+56.0496,-3.41251,fife
+56.208,-3.43153,kinross-shire
+56.263,-3.77915,perth and kinross
+56.4618,-2.97714,dundee
+56.5027,-2.71951,angus
+56.6733,-5.10653,highland
+56.8459,-2.47716,aberdeenshire
+56.967,-7.47856,comhairle nan eilean siar
+57.0876,-2.59624,aberdeen
+57.3308,-3.35297,moray
+57.4679,-3.28995,archiestown
+57.4813,-4.22395,inverness
+57.5312,-3.21093,rothes
+58.9589,-3.27571,orkney islands
+59.8833,-1.30461,shetland
