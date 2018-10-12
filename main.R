@@ -9,6 +9,8 @@ library(dplyr)
 library(downloader)
 library(xml2)
 library(DBI)
+library(httr)
+library(fansi)
 
 impactful_folder <- 'impactful adverts'
 emails_folder <- 'emails'
@@ -24,6 +26,7 @@ role_data_csv <- file.path(data_folder, 'role_data.csv')
 grade_data_csv <- file.path(data_folder, 'grade_data.csv')
 salary_data_csv <- file.path(data_folder, 'salary_data.csv')
 location_data_csv <- file.path(data_folder, 'locations_data.csv')
+found_locations_csv <- file.path(data_folder, 'found_locations.csv')
 adverts_csv_name <- file.path(data_folder, 'all_full_advert_data.csv')
 missing_data_csv <- file.path(data_folder, 'missing_data.csv')
 key_words_csv <- file.path(lookups_folder, 'key_words.csv')
@@ -39,7 +42,16 @@ region_lookup_file <- file.path(lookups_folder, 'region_lookup.csv')
 competency_data_file <- file.path(data_folder, 'competency_data.csv')
 #jobsdb <- dbConnect(RSQLite::SQLite(), file.path(data_folder, "jobs_db.sqlite"))
 
+#Set proxy if necessary
+proxy_file <- "proxy_url.txt"
+
+if(file.exists(proxy_file)){
+  proxy_url <- read_file(proxy_file)
+  set_config(use_proxy(url = proxy_url, port = 8080))
+}
+
 #data
+source('R_data//functions.R')
 source('R_data//create_csv_from_html_emails.R')
 source('R_data//clean_data.R')
 source('R_data//parse_locations.R')

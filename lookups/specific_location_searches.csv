@@ -1,7 +1,9 @@
-lat,lon,matched_location,search term
-51.50365,-0.12664,SW1A 2AS,70 whitehall
-51.49877,-0.13097,SW1H 0ET,1 victoria st
-51.50454,-0.12588,SW1A 2ER,100 parliament st
-51.50003,-0.13462,SW1H 9AJ,102 petty france
-51.50176,-0.12925,SW1A 2HQ,1 horse guards
-51.50099,-0.12843,SW1P 3AE,10 great george st
+long,lat,postcode,region,parent_region
+-0.12664,51.50365,SW1A 2AS,70 whitehall,westminster
+-0.13097,51.49877,SW1H 0ET,1 victoria st,westminster
+-0.12588,51.50454,SW1A 2ER,100 parliament st,westminster
+-0.13462,51.50003,SW1H 9AJ,102 petty france,westminster
+-0.12925,51.50176,SW1A 2HQ,1 horse guards,westminster
+-0.12843,51.50099,SW1P 3AE,10 great george st,westminster
+-0.12971,51.49579,SW1P 4DF,2 marsham st,westminster
+-0.1277,51.50354,SW1A 2AA,10 downing st,westminster
