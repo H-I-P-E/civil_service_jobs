@@ -4,8 +4,8 @@ my_session <- log_in_session(username, password)
 
 download_page_logged_in <- Vectorize(function(job_ref){
   file_name <- paste(adverts_folder, '\\', job_ref, '.html', sep = '')
-  print(file_name)
   if(!file.exists(file_name)){
+    print(paste("Downloading job:",job_ref))
   job_url <- paste("https://www.civilservicejobs.service.gov.uk/csr/jobs.cgi?jcode=",job_ref,"&csource=csalerts", sep = "")
   job_url_session <- jump_to(my_session, job_url)
   job_html <- read_html(job_url_session)

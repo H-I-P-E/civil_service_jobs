@@ -1,10 +1,3 @@
-existing_job_refs <- c()
-if(file.exists(cleaned_data_csv)){
-  existing_job_refs <- cleaned_data_csv %>%
-    read_csv %>%
-    pull(job_id)
-}
-
 all_advert_data <- read_csv(raw_data_csv_name) %>%
   mutate(closing_date = dmy(gsub("Closing Date: ", "", closing_date)),
          date_downloaded = ymd(date_downloaded),
