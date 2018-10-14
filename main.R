@@ -10,7 +10,6 @@ library(downloader)
 library(xml2)
 library(DBI)
 library(httr)
-library(fansi)
 
 impactful_folder <- 'impactful adverts'
 emails_folder <- 'emails'

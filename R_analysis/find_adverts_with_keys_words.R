@@ -13,7 +13,7 @@ count_key_word <- function(key_word, job_descriptions){
            select(-`Job description`))}
   
 key_word_results <- map(key_words$`Search term`, count_key_word, all_advert_data) %>%
-  reduce(inner_join) %>%
+  reduce(inner_join, by = c("job_ref" = "job_ref")) %>%
   gather(key = "search_term", value = "count", -job_ref) %>%
   filter(count > 0) %>%
   left_join(key_words, by = c("search_term" = "Search term")) %>%
@@ -21,6 +21,7 @@ key_word_results <- map(key_words$`Search term`, count_key_word, all_advert_data
   group_by(`Cause area`, job_ref) %>%
   mutate(cause_area_sum = sum(match_rating)) %>%
   ungroup %>%
-  select(job_ref, `Cause area`, cause_area_sum, match_rating, search_term)
+  select(job_ref, `Cause area`, cause_area_sum, match_rating, search_term, score_cutoff)
+
 
 write_csv(key_word_results, key_words_results_file)

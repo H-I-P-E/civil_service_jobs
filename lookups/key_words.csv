@@ -1,47 +1,91 @@
-Cause area,Search term,Strength of association 1-9 (currently subjective)
-Factory farming,factory farming,9
-Factory farming,farming,2
-Factory farming,slaughter,9
-Factory farming,animal welfare,9
-Factory farming,clean meat,9
-Factory farming,cultured meat,9
-Global health and development,deworming,9
-Global health and development,malaria,9
-Global health and development,international development,9
-Nuclear,nuclear weapon,9
-Nuclear,nuclear,5
-Housing,housing,9
-Institutional decision-making,evidence based,4
-Institutional decision-making,institutional descision making,9
-Institutional decision-making,institutional descision-making,9
-Institutional decision-making,controlled trial,6
-Institutional decision-making,rct,7
-Institutional decision-making,horizon scanning,3
-Climate change,climate change,9
-Climate change,global warming,9
-Climate change,carbon emission,7
-Climate change,carbon dioxide,4
-Climate change,greenhouse gas,6
-China,china,9
-China,chinese,9
-China,beijing,6
-Biorisk,pandemic,7
-Biorisk,epidemic,7
-Biorisk,bioterrorism,5
-Biorisk,biorisk,9
-Biorisk,biosecurity,9
-AI,artificial intelligence,9
-Mental health,mental health,9
-Mental health,wellbeing,2
-Mental health,mental ill,9
-Social mobility,social mobility,9
-Tech policy,tech policy,9
-Tech policy,technology policy,9
-Tech policy,digital policy,7
-International collaboration,multilateral,5
-International collaboration,international collaboration,9
-International collaboration,g20,4
-International collaboration,nato,4
-International collaboration,commonwealth,1
-International collaboration,global,1
-International collaboration,international,1
+Cause area,Search term,Strength of association 1-9 (currently subjective),type,score_cutoff
+Factory farming,factory farming,8,keyword,9
+Factory farming,farming for the future ,9,team,9
+Factory farming,farming,1,keyword,9
+Factory farming,slaughter,8,keyword,9
+Factory farming,animal welfare,9,keyword,9
+Factory farming,animal health and welfare,9,team,9
+Factory farming,clean meat,9,keyword,9
+Factory farming,cultured meat,9,keyword,9
+Global health and development,humanitarian response group,9,team,9
+Global health and development,stabilisation unit,9,team,9
+Global health and development,ukcdr,8,team,9
+Global health and development,global and public health team,9,team,9
+Global health and development,deworming,8,keyword,9
+Global health and development,malaria,8,keyword,9
+Global health and development,overseas development,8,keyword,9
+Global health and development,international development,8,keyword,9
+Nuclear disarmament,arms control,4,keyword,9
+Nuclear disarmament,counter proliferation,9,keyword,9
+Nuclear disarmament,counter-proliferation,9,keyword,9
+Nuclear disarmament,defence nuclear organisation,9,team,9
+Nuclear disarmament,nuclear weapon,8,keyword,9
+Nuclear disarmament,nuclear,1,keyword,9
+Housing,housing,2,keyword,9
+Housing,homeless,9,keyword,9
+Institutional decision-making,evaluation unit,9,team,9
+Institutional decision-making,evidence based,4,keyword,9
+Institutional decision-making,institutional descision making,9,keyword,9
+Institutional decision-making,institutional descision-making,9,keyword,9
+Institutional decision-making,controlled trial,6,keyword,9
+Institutional decision-making,rct,7,keyword,9
+Institutional decision-making,horizon scanning,6,keyword,9
+Climate change,climate change,4,keyword,9
+Climate change,global warming,4,keyword,9
+Climate change,carbon emission,4,keyword,9
+Climate change,carbon dioxide,4,keyword,9
+Climate change,greenhouse gas,4,keyword,9
+Climate change,committee on climate change,9,team,9
+Climate change,international climate fund,9,project,9
+Climate change,climate and environment department,9,team,9
+Climate change,carbon capture,4,keyword,9
+Climate change,decarbonisation,4,keyword,9
+China policy,china,8,keyword,9
+China policy,chinese,8,keyword,9
+China policy,beijing,6,keyword,9
+China policy,hong kong,6,keyword,9
+Biorisk and biosecurity,global health security programme ,9,project,9
+Biorisk and biosecurity,health rapid support team  ,9,team,9
+Biorisk and biosecurity,emergency preparedness team,9,team,9
+Biorisk and biosecurity,pandemic,9,keyword,9
+Biorisk and biosecurity,epidemic,9,keyword,9
+Biorisk and biosecurity,bioterrorism,9,keyword,9
+Biorisk and biosecurity,biorisk,2,keyword,9
+Biorisk and biosecurity,biosecurity,2,keyword,9
+Biorisk and biosecurity,pandemic influenza preparedness,9,team,9
+Mental health,mental health team,9,team,9
+Mental health,mental health unit,9,team,9
+Mental health,mental health,4,keyword,9
+Mental health,mental health policy,9,team,9
+Mental health,mental health monitoring analytics,9,team,9
+Mental health,mental health legislation and justice,9,team,9
+Mental health,wellbeing,2,keyword,9
+Mental health,mental ill,4,keyword,9
+Social mobility,social mobility,8,keyword,9
+International collaboration,global partnership,9,keyword,9
+International collaboration,multilateral,5,keyword,9
+International collaboration,international collaboration,9,keyword,9
+International collaboration,g20,4,keyword,9
+International collaboration,nato,4,keyword,9
+International collaboration,commonwealth,1,keyword,9
+International collaboration,global,1,keyword,9
+International collaboration,international,1,keyword,9
+"AI, data and tech policy",office for ai,9,team,9
+"AI, data and tech policy",centre for data ethics,9,team,9
+"AI, data and tech policy",tech policy,9,keyword,9
+"AI, data and tech policy",technology policy,9,keyword,9
+"AI, data and tech policy",digital policy,7,keyword,9
+"AI, data and tech policy",artificial intelligence,8,keyword,9
+"AI, data and tech policy",data ethic,5,keyword,9
+Existential risk,national risks team,9,team,9
+Existential risk,strategic early warning,9,team,9
+Existential risk,defence and overseas secretariat,9,team,9
+Existential risk,joint intelligence organisation,8,team,9
+Existential risk,joint terrorism analysis centre,9,team,9
+Existential risk,centre for the protection of national infrastructure ,9,team,9
+Existential risk,horizon scanning programme ,9,team,9
+Existential risk,risk and preparedness team ,9,team,9
+Existential risk,civil contingencies secretariat,9,team,9
+Existential risk,domestic affairs secretariat,9,team,9
+Existential risk,national security secretariat,9,team,9
+Existential risk,concepts and doctrine centre,9,team,9
