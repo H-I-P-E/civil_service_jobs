@@ -26,10 +26,9 @@ new_email_data <- data_frame(filename = dir(emails_folder, pattern = "*.html")) 
   ungroup() %>%
   left_join(department_lookup %>% read_csv, 
             by = c('department'='unmapped_department')) %>%
-  mutate(job_department = coalesce(job_department, department)) %>%
-  select(-id, -department) %>%
+  mutate(job_department = coalesce(job_department_short_name, department)) %>%
+  select(-id) %>%
   mutate_all(funs(gsub("\t|;", "", .)))
-
 
 all_email_data <- previous_extracted_data %>%
   bind_rows(new_email_data) %>%
