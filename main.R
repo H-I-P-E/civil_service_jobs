@@ -8,6 +8,8 @@ library(stringr)
 library(dplyr)
 library(downloader)
 library(xml2)
+library(DBI)
+library(httr)
 
 impactful_folder <- 'impactful adverts'
 emails_folder <- 'emails'
@@ -18,24 +20,40 @@ email_tables <- 'ea emails'
 
 raw_data_csv_name <- file.path(data_folder, 'raw_data.csv')
 department_lookup <- file.path(lookups_folder, 'department_remapping.csv')
-cleaned_data_csv <- file.path(data_folder, 'cleaned_advert_data.csv')
+cleaned_data_csv <- file.path(data_folder, 'basic_advert_data.csv')
 role_data_csv <- file.path(data_folder, 'role_data.csv')
 grade_data_csv <- file.path(data_folder, 'grade_data.csv')
 salary_data_csv <- file.path(data_folder, 'salary_data.csv')
 location_data_csv <- file.path(data_folder, 'locations_data.csv')
-adverts_csv_name <- file.path(data_folder, 'all_full_advert_data.csv')
+found_locations_csv <- file.path(data_folder, 'found_locations.csv')
+adverts_csv_name <- file.path(data_folder, 'full_advert_data.csv')
 missing_data_csv <- file.path(data_folder, 'missing_data.csv')
 key_words_csv <- file.path(lookups_folder, 'key_words.csv')
 pre_mining_data_csv <- file.path(data_folder, 'job_description_with_cause_areas.csv')
 key_words_results_file <- file.path(data_folder, 'key_words_results_full.csv')
 key_words_summary_file <- file.path(data_folder, 'key_words_summary.csv')
 competencies_file <- file.path(lookups_folder, 'competencies.csv')
-post_code_locations_file <- file.path(lookups_folder, 'Postcode districts.csv')
+manual_locations_file <- file.path(lookups_folder, 'manually_matched_locations.csv')
+specific_locations_file <- file.path(lookups_folder, 'specific_location_searches.csv')
+post_code_locations_file <- file.path(lookups_folder, 'postcode_locations.csv')
+region_lookup_file <- file.path(lookups_folder, 'region_lookup.csv')
+
 competency_data_file <- file.path(data_folder, 'competency_data.csv')
+#jobsdb <- dbConnect(RSQLite::SQLite(), file.path(data_folder, "jobs_db.sqlite"))
+
+#Set proxy if necessary
+proxy_file <- "proxy_url.txt"
+
+if(file.exists(proxy_file)){
+  proxy_url <- read_file(proxy_file)
+  set_config(use_proxy(url = proxy_url, port = 8080))
+}
 
 #data
+source('R_data//functions.R')
 source('R_data//create_csv_from_html_emails.R')
 source('R_data//clean_data.R')
+source('R_data//parse_locations.R')
 source('R_data//scrape_adverts.R')
 source('R_data//create_csv_from_html_adverts.R')
 

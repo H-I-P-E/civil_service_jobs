@@ -1,14 +1,14 @@
-grade,order,name,acronym,group
-Administrative Assistant,11,Administrative Assistant,AA,Admin
-Administrative Officer,10,Administrative Officer,AO,Admin
-Executive Officer,9,Executive Officer,EO,EO – SEO
-Grade 6,5,Grade 6,G6,G6/7
-Grade 7,6,Grade 7,G7,G6/7
-Higher Executive Officer,8,Higher Executive Officer,HEO,EO – SEO
-Industrial,12,Industry,Ind,Other
-Other,13,Other,Other,Other
-SCS Pay Band 1,4,Deputy Director,DD,SCS
-SCS Pay Band 2,3,Director,Dir,SCS
-SCS Pay Band 3,2,Director General,DG,SCS
-SCS Pay Band 4,1,Permanent Secretary,PS,SCS
-Senior Executive Officer,7,Senior Executive Officer,SEO,EO – SEO
+grade,order,name,acronym,group,group_order
+Administrative Assistant,11,Administrative Assistant,AA,Admin,4
+Administrative Officer,10,Administrative Officer,AO,Admin,4
+Executive Officer,9,Executive Officer,EO,EO – SEO,3
+Grade 6,5,Grade 6,G6,G6/7,2
+Grade 7,6,Grade 7,G7,G6/7,2
+Higher Executive Officer,8,Higher Executive Officer,HEO,EO – SEO,3
+Industrial,12,Industry,Ind,Other,5
+Other,13,Other,Other,Other,5
+SCS Pay Band 1,4,Deputy Director,DD,SCS,1
+SCS Pay Band 2,3,Director,Dir,SCS,1
+SCS Pay Band 3,2,Director General,DG,SCS,1
+SCS Pay Band 4,1,Permanent Secretary,PS,SCS,1
+Senior Executive Officer,7,Senior Executive Officer,SEO,EO – SEO,3

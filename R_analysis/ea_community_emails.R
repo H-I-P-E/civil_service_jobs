@@ -1,8 +1,9 @@
 dir.create(email_tables, showWarnings = FALSE)
 
 min_cause_area_sum <- 10 #make this cause area specific?
-ea_cause_areas <- c('Biorisk', 'China', 'Climate change', 
-                    'Factory farming', 'Nuclear', 'AI', 'Mental health', 'Global poverty') 
+ea_cause_areas <- c('Biorisk and biosecurity', 'China policy', 'Climate change', 
+                    'Factory farming', 'Nuclear disarmament', 'AI, data and tech policy',
+                    'Mental health', 'Global health and development', 'Existential risk', 'Institutional decision-making') 
 #These should bepart of the cause area info and key word search
 #The lines above are a quick fix - without them we have lots of DfID jobs
 
@@ -36,7 +37,8 @@ emailable_key_words_results <- key_words_results_file %>%
          link,
          job_department,
          `To share with EAs? Y/N/?`,
-         Notes)
+         Notes) %>%
+  unique()
 
 #check if there are any new ones?
 my_file_name <- file.path(email_tables, paste(today(),'.csv', sep = ''))

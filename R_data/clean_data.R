@@ -30,28 +30,3 @@ salaries <-  all_advert_data %>%
   mutate(salary = as.numeric(gsub('\\.|,| ', '', salary))) %>%
   na.omit %>%
   write_csv(salary_data_csv)
-
-locations_lookup <- post_code_locations_file %>%
-  read_csv %>%
-  mutate(
-    postcode_regex = paste("(^|,|[[:space:]])", tolower(Postcode),"[[:space:]]|$)", sep =""),
-    region_regex = paste("(^|,|[[:space:]])", tolower(Region),"[[:space:]]|$)", sep ="")
-  ) %>%
-  select(postcode_regex,region_regex, Postcode, Region) %>%
-  mutate(dummy = TRUE)
-
-locations <-  all_advert_data %>%
-  subset(select = c(job_id, location)) %>%
-  mutate(dummy = TRUE,
-         location = tolower(gsub("[[:punct:]]", " ", location))) %>%
-  full_join(locations_lookup) %>%
-  rowwise() %>%
-  mutate(post_code_matches = grepl(postcode_regex, location)) %>%
-  mutate(region_matches = grepl(region_regex, location)) %>%
-  filter(post_code_matches | region_matches)%>%
-  distinct(job_id, Region) %>%
-  select(job_id, Region)
-
-write_csv(locations, location_data_csv)
-
-
