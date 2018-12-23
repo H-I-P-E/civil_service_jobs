@@ -13,12 +13,14 @@ library(httr)
 
 impactful_folder <- 'impactful adverts'
 emails_folder <- 'emails'
+external_emails_folder <- 'external emails'
 adverts_folder <- 'adverts'
 lookups_folder <- 'lookups'
 data_folder <- 'data'
 email_tables <- 'ea emails'
 
 raw_data_csv_name <- file.path(data_folder, 'raw_data.csv')
+external_emails_data_csv <- file.path(data_folder, 'raw_external_data.csv')
 department_lookup <- file.path(lookups_folder, 'department_remapping.csv')
 cleaned_data_csv <- file.path(data_folder, 'basic_advert_data.csv')
 role_data_csv <- file.path(data_folder, 'role_data.csv')

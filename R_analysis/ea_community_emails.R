@@ -31,7 +31,7 @@ emailable_key_words_results <- key_words_results_file %>%
   filter(cause_area_sum >= min_cause_area_sum,
          (closing_date - today()) > 4,
          `Cause area` %in% ea_cause_areas,
-         approach == 'External',
+         (approach == 'External'| is_readvertised == T),
          !(link %in%  previously_identified_adverts)) %>%
   select(`Cause area`,
          link,

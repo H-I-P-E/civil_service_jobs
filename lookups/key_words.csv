@@ -15,12 +15,12 @@ Global health and development,deworming,8,keyword,9
 Global health and development,malaria,8,keyword,9
 Global health and development,overseas development,8,keyword,9
 Global health and development,international development,8,keyword,9
-Nuclear disarmament,arms control,4,keyword,9
-Nuclear disarmament,counter proliferation,9,keyword,9
-Nuclear disarmament,counter-proliferation,9,keyword,9
-Nuclear disarmament,defence nuclear organisation,9,team,9
-Nuclear disarmament,nuclear weapon,8,keyword,9
-Nuclear disarmament,nuclear,1,keyword,9
+Nuclear safety,arms control,4,keyword,9
+Nuclear safety,counter proliferation,9,keyword,9
+Nuclear safety,counter-proliferation,9,keyword,9
+Nuclear safety,defence nuclear organisation,9,team,9
+Nuclear safety,nuclear weapon,8,keyword,9
+Nuclear safety,nuclear,1,keyword,9
 Housing,housing,2,keyword,9
 Housing,homeless,9,keyword,9
 Institutional decision-making,evaluation unit,9,team,9
@@ -70,6 +70,8 @@ International collaboration,nato,4,keyword,9
 International collaboration,commonwealth,1,keyword,9
 International collaboration,global,1,keyword,9
 International collaboration,international,1,keyword,9
+"AI, data and tech policy",data unit,9,team,9
+"AI, data and tech policy",(data) unit,9,team,9
 "AI, data and tech policy",office for ai,9,team,9
 "AI, data and tech policy",centre for data ethics,9,team,9
 "AI, data and tech policy",tech policy,9,keyword,9
