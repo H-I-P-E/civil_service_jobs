@@ -1,37 +1,6 @@
 jobs_xpath <- '//p | //h3 | //h2 | //h2//a'
 column_names = c("job_title", "link", "department", "location", "salary", "grade", "approach", "role_type","closing_date")
 
-if(file.exists(raw_data_csv_name)){
-  previous_extracted_data <- read_csv(raw_data_csv_name)
-  previous_extracted_dates <- previous_extracted_data$date_downloaded
-}else{
-  previous_extracted_data <- NULL
-  previous_extracted_dates <- c()}
 
-new_email_data <- data_frame(filename = dir(emails_folder, pattern = "*.html")) %>%
-  mutate(date_downloaded = gsub(".html", "", filename)) %>%
-  filter(!(date_downloaded %in% previous_extracted_dates)) %>%
-  mutate(file_contents = map(filename, ~ read_html(paste(emails_folder,.,sep ='\\'))) %>% 
-           map(~html_nodes(., xpath = jobs_xpath)) %>%
-           map(~ ifelse(is.na(html_attr(., 'href')),html_text(.),html_attr(., 'href'))) %>%
-           map(~head(., -1)) %>%
-           map(~tail(., -2)) %>%
-           map(~data.frame('all_data' = .[1:length(.)-length(.)%% length(column_names)],
-                           'id' = rep(1:(length(.)%/% length(column_names)), each = length(column_names)),
-                           stringsAsFactors = F))) %>%
-  unnest %>%
-  group_by(id, date_downloaded) %>%
-  summarise('all_data' = paste(all_data, collapse ="!!!")) %>%
-  separate('all_data', into = column_names, sep = "!!!") %>% 
-  ungroup() %>%
-  left_join(department_lookup %>% read_csv, 
-            by = c('department'='unmapped_department')) %>%
-  mutate(job_department = coalesce(job_department_short_name, department)) %>%
-  select(-id) %>%
-  mutate_all(funs(gsub("\t|;", "", .)))
-
-all_email_data <- previous_extracted_data %>%
-  bind_rows(new_email_data) %>%
-  distinct
-
-write.csv(all_email_data, raw_data_csv_name, row.names = F)
+create_csv_from_html_emails(emails_folder, raw_data_csv_name)
+create_csv_from_html_emails(external_emails_folder, external_emails_data_csv)
