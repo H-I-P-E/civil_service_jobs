@@ -36,10 +36,10 @@ if(file.exists(missing_data_csv)){
   references_to_exclude <- unique(c(references_to_exclude, previous_missing_data$job_ref))
 }
 
-all_files <- data_frame(filename = dir(adverts_folder, pattern = "*.html")) %>%
-  mutate(job_ref = gsub("\\.html*","",filename)) %>%
+all_files <- data_frame(filename = dir(adverts_folder, pattern = "*.html", recursive = T, full.names = T)) %>%
+  mutate(job_ref = str_extract(filename, '[[:digit:]]{7,}')) %>%
   filter(!(as.character(job_ref) %in% references_to_exclude)) %>%
-  mutate(data = map(filename, ~ read_html(paste(adverts_folder,.,sep ='\\'))))
+  mutate(data = map(filename, ~ read_html(.)))
 
 missing_data <- all_files %>%
   filter(unlist(map(data, length)) <= 1) %>%
