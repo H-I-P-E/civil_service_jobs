@@ -1,7 +1,8 @@
 all_advert_data <- adverts_csv_name %>%
   read_csv %>%
-  select(job_ref, `Job description`) %>%
-  mutate(`Job description` = tolower(`Job description`))
+  select(job_ref, `Job description`)
+
+Encoding(all_advert_data$`Job description`) <- "latin"
 
 key_words <- key_words_csv %>%
   read_csv
@@ -9,7 +10,7 @@ key_words <- key_words_csv %>%
 count_key_word <- function(key_word, job_descriptions){
   print(key_word) #use_mutate
   job_descriptions["search_term"] <- key_word
-  job_descriptions["count"] <- str_count(job_descriptions$`Job description`, key_word)
+  job_descriptions["count"] <- str_count(tolower(job_descriptions$`Job description`), key_word)
   return(job_descriptions  %>%
            filter(count > 0) %>%
            select(-`Job description`))}
