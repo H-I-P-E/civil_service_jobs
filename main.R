@@ -10,6 +10,7 @@ library(downloader)
 library(xml2)
 library(DBI)
 library(httr)
+library(RCurl)
 
 impactful_folder <- 'impactful adverts'
 emails_folder <- 'emails'
@@ -39,6 +40,9 @@ manual_locations_file <- file.path(lookups_folder, 'manually_matched_locations.c
 specific_locations_file <- file.path(lookups_folder, 'specific_location_searches.csv')
 post_code_locations_file <- file.path(lookups_folder, 'postcode_locations.csv')
 region_lookup_file <- file.path(lookups_folder, 'region_lookup.csv')
+adverts_for_80k <- file.path(email_tables, 'jobs_for_80k_jobs_board.csv')
+
+
 
 competency_data_file <- file.path(data_folder, 'competency_data.csv')
 #jobsdb <- dbConnect(RSQLite::SQLite(), file.path(data_folder, "jobs_db.sqlite"))

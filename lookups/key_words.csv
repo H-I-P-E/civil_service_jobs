@@ -1,12 +1,11 @@
 Cause area,Search term,Strength of association 1-9 (currently subjective),type,score_cutoff
-Factory farming,factory farming,8,keyword,9
-Factory farming,farming for the future ,9,team,9
-Factory farming,farming,1,keyword,9
-Factory farming,slaughter,8,keyword,9
-Factory farming,animal welfare,9,keyword,9
-Factory farming,animal health and welfare,9,team,9
-Factory farming,clean meat,9,keyword,9
-Factory farming,cultured meat,9,keyword,9
+Animal welfare,factory farming,8,keyword,9
+Animal welfare,farming for the future ,9,team,9
+Animal welfare,slaughter,8,keyword,9
+Animal welfare,animal welfare,8,keyword,9
+Animal welfare,animal health and welfare,8,team,9
+Animal welfare,clean meat,9,keyword,9
+Animal welfare,cultured meat,9,keyword,9
 Global health and development,humanitarian response group,9,team,9
 Global health and development,stabilisation unit,9,team,9
 Global health and development,ukcdr,8,team,9
@@ -82,7 +81,7 @@ International collaboration,international,1,keyword,9
 Existential risk,national risks team,9,team,9
 Existential risk,strategic early warning,9,team,9
 Existential risk,defence and overseas secretariat,9,team,9
-Existential risk,joint intelligence organisation,8,team,9
+Existential risk,joint intelligence organisation,9,team,9
 Existential risk,joint terrorism analysis centre,9,team,9
 Existential risk,centre for the protection of national infrastructure ,9,team,9
 Existential risk,horizon scanning programme ,9,team,9

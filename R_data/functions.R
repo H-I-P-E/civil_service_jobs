@@ -67,7 +67,8 @@ create_csv_from_html_emails <- function(my_email_folder, csv_name){
     mutate_all(funs(gsub("\t|;", "", .)))
   
   all_email_data <- previous_extracted_data %>%
-    bind_rows(new_email_data) %>%
+    mutate_all(as.character) %>%
+    bind_rows(new_email_data %>% mutate_all(as.character)) %>%
     distinct
   
   write.csv(all_email_data, csv_name, row.names = F)
