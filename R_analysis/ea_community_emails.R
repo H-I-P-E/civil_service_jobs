@@ -5,8 +5,7 @@ ea_cause_areas <- c('Biorisk and biosecurity', 'China policy', 'Climate change',
                     'Animal welfare', 'Nuclear safety', 'AI, data and tech policy',
                     'Mental health', 'Global health and development', 'Existential risk', 'Institutional decision-making') 
 #These should bepart of the cause area info and key word search
-#The lines above are a quick fix - without them we have lots of DfID jobs
-
+#The lines above are a quick fix - without them we have lots of DfID job
 all_advert_data <-adverts_csv_name %>%
   read_csv
 
@@ -26,10 +25,10 @@ run_date <- today()
 all_adverts <- key_words_results_file %>%
   read_csv %>%
   left_join(needed_advert_info) %>%
-  left_join(basic_advert_info, by = c('job_ref' = 'job_id')) %>%
   filter(cause_area_sum >= min_cause_area_sum,
-         (closing_date - today()) > 4,
-         `Cause area` %in% ea_cause_areas,
+         `Cause area` %in% ea_cause_areas) %>%
+  left_join(basic_advert_info, by = c('job_ref' = 'job_id')) %>% #this line is the issue
+  filter((closing_date - today()) > 4,
          (approach == 'External'| is_readvertised == T),
          !(link %in%  previously_identified_jobs)) %>%
   select(`Cause area`,
